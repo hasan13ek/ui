@@ -34,6 +34,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  flutter_screenutil: ^5.5.4
+
 
 dev_dependencies:
   flutter_test:
@@ -45,6 +47,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -74,7 +77,31 @@ flutter:
   - assets/images/brat.png
   - assets/images/vol.png
   - assets/images/x.png
-
+  - assets/images/ortada.png
+  - assets/images/orqafoni.png
+  - assets/images/bu.png
+  - assets/images/bu2.png
+  - assets/images/gogle.png
+  - assets/images/go.png
+  - assets/images/us.png
+  - assets/images/sms.png
+  - assets/images/pas.png
+  - assets/images/koz.png
+  - assets/images/ptichka.png
+  - assets/images/noitfication.png
+  - assets/images/settings.png
+  - assets/images/sop.png
+  - assets/images/ice.png
+  - assets/images/Pattern.png
+  - assets/images/viga.png
+  - assets/images/healthy.png
+  - assets/images/good.png
+  - assets/images/tort.png
+  - assets/images/boshqa.png
+  - assets/images/oshroq.png
+  - assets/images/opa.png
+  - assets/images/ospaz.png
+  - assets/images/kob.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

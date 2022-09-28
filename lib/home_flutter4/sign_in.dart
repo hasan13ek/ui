@@ -1,23 +1,24 @@
-import 'package:first_lesson/home_flutter3/upload_photo.dart';
+import 'package:first_lesson/home_flutter3/payment_method.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Payment_method extends StatefulWidget {
-  const Payment_method({Key? key}) : super(key: key);
+class Sign_in extends StatefulWidget {
+  const Sign_in({Key? key}) : super(key: key);
 
   @override
-  State<Payment_method> createState() => _Payment_methodState();
+  State<Sign_in> createState() => _Payment_methodState();
 }
 
-class _Payment_methodState extends State<Payment_method> {
+class _Payment_methodState extends State<Sign_in> {
   @override
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
     onPrimary: Colors.blue,
     elevation: 0,
     primary: Colors.white,
     minimumSize: Size(0, 0),
-    padding: EdgeInsets.only(top: 22,bottom: 28),
+    padding: EdgeInsets.only(top: 22,bottom: 28).r,
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(28)),
+      borderRadius: BorderRadius.all(Radius.circular(28).r),
     ),
   );
   final ButtonStyle raisedButtonStyle1 = ElevatedButton.styleFrom(
@@ -25,9 +26,9 @@ class _Payment_methodState extends State<Payment_method> {
     elevation: 0,
     primary: Colors.white,
     minimumSize: Size(0, 0),
-    padding: EdgeInsets.only(top: 6,bottom: 7),
+    padding: EdgeInsets.only(top: 6,bottom: 7).r,
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(28)),
+      borderRadius: BorderRadius.all(Radius.circular(28).r),
     ),
   );
   final ButtonStyle raisedButtonStyle2 = ElevatedButton.styleFrom(
@@ -35,9 +36,9 @@ class _Payment_methodState extends State<Payment_method> {
     elevation: 0,
     primary: Colors.white,
     minimumSize: Size(0, 0),
-    padding: EdgeInsets.only(top: 20,bottom: 21),
+    padding: EdgeInsets.only(top: 20,bottom: 21).r,
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(28)),
+      borderRadius: BorderRadius.all(Radius.circular(28).r),
     ),
   );
   final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
@@ -53,16 +54,16 @@ class _Payment_methodState extends State<Payment_method> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-      backgroundColor: Colors.grey[100],
-      elevation: 0,
-      title: InkWell(
-          onTap: (){},
-          onLongPress: (){},
-          child: Container(child: Image.asset("assets/images/img.png"),width: 45,height: 45,)
+        backgroundColor: Colors.grey[100],
+        elevation: 0,
+        title: InkWell(
+            onTap: (){},
+            onLongPress: (){},
+            child: Container(child: Image.asset("assets/images/img.png"),width: 45,height: 45,)
+        ),
       ),
-    ),
       body: Container(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(20).r,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -71,22 +72,36 @@ class _Payment_methodState extends State<Payment_method> {
               child: Container(child: Text("Payment Method",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 20),),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Padding(
               padding: EdgeInsets.only(left: 5),
               child: Text("This data will be displayed in your account\nprofile for security",style: TextStyle(fontWeight: FontWeight.w500),),
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: 20.h,),
             Column(
               children: [
                 Container(
                   child: ElevatedButton(
                     style: raisedButtonStyle,
                     onPressed: () {},
-                    child: Image.asset("assets/images/paypal.png"),
+                    child: Container(padding: EdgeInsets.only(right: 210),child: Text("First Name",style: TextStyle(color: Color(0xFF8C8C8C)),)),
                   ),
-                  width: 335,
-                  height: 73,
+                  width: 347.w,
+                  height: 68.h,
+                ),
+              ],
+            ),
+            SizedBox(height: 17.h,),
+            Column(
+              children: [
+                Container(
+                  child: ElevatedButton(
+                    style: raisedButtonStyle,
+                    onPressed: () {},
+                    child: Container(padding: EdgeInsets.only(right: 210),child: Text("Last Name",style: TextStyle(color: Color(0xFF8C8C8C)),)),
+                  ),
+                  width: 347.w,
+                  height: 68.h,
                 ),
               ],
             ),
@@ -95,40 +110,26 @@ class _Payment_methodState extends State<Payment_method> {
               children: [
                 Container(
                   child: ElevatedButton(
-                    style: raisedButtonStyle1,
+                    style: raisedButtonStyle,
                     onPressed: () {},
-                    child: Image.asset("assets/images/visa.png"),
+                    child: Container(padding: EdgeInsets.only(right: 185),child: Text("Mobile Number",style: TextStyle(color: Color(0xFF8C8C8C)),)),
                   ),
-                  width: 335,
-                  height: 73,
+                  width: 347.w,
+                  height: 68.h,
                 ),
               ],
             ),
-            SizedBox(height: 17,),
-            Column(
-              children: [
-                Container(
-                  child: ElevatedButton(
-                    style: raisedButtonStyle2,
-                    onPressed: () {},
-                    child: Image.asset("assets/images/payoner.png"),
-                  ),
-                  width: 335,
-                  height: 73,
-                ),
-              ],
-            ),
-            SizedBox(height: 66,),
+            SizedBox(height: 126.h,),
             Column(
               children: [
                 Center(
-                  child: 
+                  child:
                   Expanded(
                     child: Container(
                       child: ElevatedButton(
                         style: raisedButtonStyle3,
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Upload_photo()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Payment_method()));
                         },
                         child: Text("Next",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 16),),
                       ),
@@ -142,7 +143,7 @@ class _Payment_methodState extends State<Payment_method> {
           ],
         ),
       ),
-    backgroundColor: Colors.grey[198],
+      backgroundColor: Colors.grey[198],
     );
   }
 }

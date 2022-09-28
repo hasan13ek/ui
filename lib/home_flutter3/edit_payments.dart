@@ -1,14 +1,18 @@
+import 'package:first_lesson/home_flutter3/edit_location.dart';
 import 'package:flutter/material.dart';
 
 class Edit_paymnets extends StatefulWidget {
   const Edit_paymnets({Key? key}) : super(key: key);
-
   @override
   State<Edit_paymnets> createState() => _Edit_paymnetsState();
 }
 
 class _Edit_paymnetsState extends State<Edit_paymnets> {
   @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 4),()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>Edit_location())));
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

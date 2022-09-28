@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:first_lesson/darsda/%D1%8B%D1%80%D0%B3.dart';
 import 'package:first_lesson/darsda/my_cart.dart';
+import 'package:first_lesson/darsda/stack_va_boshqalar.dart';
 import 'package:first_lesson/home_flutter2/day_page2.dart';
 import 'package:first_lesson/home_flutter2/day_page3.dart';
 import 'package:first_lesson/home_flutter2/day_page4.dart';
@@ -22,7 +25,17 @@ import 'package:first_lesson/home_flutter3/set_location.dart';
 import 'package:first_lesson/home_flutter3/sign_upp_notification.dart';
 import 'package:first_lesson/home_flutter3/upload_photo.dart';
 import 'package:first_lesson/home_flutter3/upload_preveiw.dart';
+import 'package:first_lesson/home_flutter4/onboarding.dart';
+import 'package:first_lesson/home_flutter4/onboarding1.dart';
+import 'package:first_lesson/home_flutter4/onboarding2.dart';
+import 'package:first_lesson/home_flutter4/sign_in.dart';
+import 'package:first_lesson/home_flutter4/sign_up.dart';
+import 'package:first_lesson/home_flutter4/sign_up_process.dart';
+import 'package:first_lesson/home_flutter5/home.dart';
+import 'package:first_lesson/home_flutter5/view1.dart';
+import 'package:first_lesson/home_flutter5/view2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -37,9 +50,16 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: My_cart(),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (BuildContext context, Widget? child){
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: child);
+      },
+      child:Home(),
     );
   }
 }

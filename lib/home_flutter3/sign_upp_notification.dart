@@ -1,3 +1,4 @@
+import 'package:first_lesson/home_flutter3/call_ringing.dart';
 import 'package:flutter/material.dart';
 
 class Sign_up_notification extends StatefulWidget {
@@ -53,7 +54,9 @@ class _Sign_up_notificationState extends State<Sign_up_notification> {
                       child: Container(
                         child: ElevatedButton(
                           style: raisedButtonStyle3,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Call_Ringing()));
+                          },
                           child: Text("Try Order",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 16),),
                         ),
                         width: 157,

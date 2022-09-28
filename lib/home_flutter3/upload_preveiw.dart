@@ -1,3 +1,4 @@
+import 'package:first_lesson/home_flutter3/set_location.dart';
 import 'package:flutter/material.dart';
 
 class Upload_preview extends StatefulWidget {
@@ -61,7 +62,9 @@ class _Upload_previewState extends State<Upload_preview> {
                     child: Container(
                       child: ElevatedButton(
                         style: raisedButtonStyle3,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Set_location()));
+                        },
                         child: Text("Next",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 16),),
                       ),
                       width: 157,

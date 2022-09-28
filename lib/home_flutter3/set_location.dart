@@ -1,3 +1,4 @@
+import 'package:first_lesson/home_flutter3/sign_upp_notification.dart';
 import 'package:flutter/material.dart';
 
 class Set_location extends StatefulWidget {
@@ -99,7 +100,9 @@ class _Set_locationState extends State<Set_location> {
                     child: Container(
                       child: ElevatedButton(
                         style: raisedButtonStyle3,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Sign_up_notification()));
+                        },
                         child: Text("Next",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 16),),
                       ),
                       width: 157,

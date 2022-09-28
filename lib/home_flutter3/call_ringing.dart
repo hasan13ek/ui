@@ -1,3 +1,4 @@
+import 'package:first_lesson/home_flutter3/payments.dart';
 import 'package:flutter/material.dart';
 
 class Call_Ringing extends StatefulWidget {
@@ -9,6 +10,10 @@ class Call_Ringing extends StatefulWidget {
 
 class _Call_RingingState extends State<Call_Ringing> {
   @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 4),()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>Payments())));
+  }
   final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
     onPrimary: Colors.blue,
     elevation: 0,

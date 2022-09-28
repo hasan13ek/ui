@@ -1,3 +1,4 @@
+import 'package:first_lesson/home_flutter3/edit_payments.dart';
 import 'package:flutter/material.dart';
 
 class Payments extends StatefulWidget {
@@ -149,7 +150,9 @@ class _PaymentsState extends State<Payments> {
                   Container(
                     child: ElevatedButton(
                       style: raisedButtonStyle3,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Edit_paymnets()));
+                      },
                       child: Container(child: Text("Place My Order",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,),)),
                     ),
                     width: 300,
