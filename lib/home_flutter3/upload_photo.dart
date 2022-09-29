@@ -11,7 +11,7 @@ class Upload_photo extends StatefulWidget {
 
 class _Upload_photoState extends State<Upload_photo> {
   @override
-
+bool isDark = false;
   final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
     onPrimary: Colors.green,
     elevation: 0,
@@ -23,9 +23,10 @@ class _Upload_photoState extends State<Upload_photo> {
     ),
   );
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: isDark?Colors.black:Colors.grey[100],
         leading: Container(margin: EdgeInsets.only(left: 10).r,
             child: Image.asset("assets/images/img.png")),
         elevation: 0,
@@ -42,7 +43,7 @@ class _Upload_photoState extends State<Upload_photo> {
                   Container(
                     width: 325.w,
                     height: 129.h,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22).r),color: Colors.white),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22).r),color: isDark?Colors.grey[800]:Colors.white),
                     child: Column(
                       children: [
                         SizedBox(height: 10.h),
@@ -59,7 +60,7 @@ class _Upload_photoState extends State<Upload_photo> {
               Container(
                 width: 325.w,
                 height: 129.h,
-                decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22).r),color: Colors.white),
+                decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22).r),color: isDark?Colors.grey[800]:Colors.white),
                 child: Column(
                   children: [
                     SizedBox(height: 10.h),
@@ -96,6 +97,6 @@ class _Upload_photoState extends State<Upload_photo> {
             ],
           ),
       ),
-    backgroundColor: Colors.grey[100],);
+    backgroundColor: isDark?Colors.black:Colors.grey[100],);
   }
 }

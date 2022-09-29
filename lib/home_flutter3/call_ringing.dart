@@ -10,6 +10,7 @@ class Call_Ringing extends StatefulWidget {
 
 class _Call_RingingState extends State<Call_Ringing> {
   @override
+  bool isD = false;
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 4),()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>Payments())));
@@ -35,6 +36,7 @@ class _Call_RingingState extends State<Call_Ringing> {
     ),
   );
   Widget build(BuildContext context) {
+    isD = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -80,7 +82,7 @@ class _Call_RingingState extends State<Call_Ringing> {
           ),
         ),
       ),
-    );
+    backgroundColor: isD?Colors.black:Colors.white,);
   }
 }
 

@@ -10,6 +10,7 @@ class Upload_preview extends StatefulWidget {
 
 class _Upload_previewState extends State<Upload_preview> {
   @override
+  bool isDark = false;
   final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
     onPrimary: Colors.green,
     elevation: 0,
@@ -21,9 +22,10 @@ class _Upload_previewState extends State<Upload_preview> {
     ),
   );
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: isDark?Colors.black54:Colors.grey[100],
         leading: InkWell(
           onTap: (){},
           child: Container(margin: EdgeInsets.only(left: 10),
@@ -42,7 +44,7 @@ class _Upload_previewState extends State<Upload_preview> {
             SizedBox(height: 28,),
             Center(child: Container(width: 235,height: 238,decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
-              color: Colors.white,
+              color: isDark?Colors.black:Colors.white,
             image: DecorationImage(image: AssetImage("assets/images/okam.png")),
             ),
             child: Container(
@@ -77,6 +79,6 @@ class _Upload_previewState extends State<Upload_preview> {
           ],
         ),
       ),
-    );
+      backgroundColor: isDark?Color(0x3D0D0D0D):Colors.grey[100], );
   }
 }

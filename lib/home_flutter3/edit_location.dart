@@ -8,10 +8,14 @@ class Edit_location extends StatefulWidget {
 }
 class _Edit_locationState extends State<Edit_location> {
   @override
+  bool isD = false;
+  bool bkm = false;
   Widget build(BuildContext context) {
+    isD = Theme.of(context).brightness ==Brightness.dark;
+    bkm = Theme.of(context).brightness ==Brightness.dark;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: isD?Colors.black:Colors.grey[200],
         elevation: 0,
         leading: InkWell(
           onTap: (){},
@@ -34,22 +38,22 @@ class _Edit_locationState extends State<Edit_location> {
          const SizedBox(height: 20,),
              Container(
                width: 335,height: 107,
-               decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: Colors.white),
+               decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: isD?Colors.grey[800]:Colors.white),
                child: Column(
                  children: [
                    Row(
                      children: [
                        Container(child: Padding(
                          padding: const EdgeInsets.only(left: 12,top: 14),
-                         child:const Text("Order Location",style: TextStyle(fontSize: 14,color: Color(0xFF3B3B3B)),),
+                         child:const Text("Order Location",style: TextStyle(fontSize: 14,color: Colors.grey),),
                        ),),
                      ],
                    ),
                    const SizedBox(height: 12,),
                    Row(
                      children: [
-                       Container(child: IconButton(onPressed: (){}, icon: const Icon(Icons.account_circle_outlined,color: Colors.red,)),),
-                       SizedBox(width: 6,),
+                       Container(child: Image.asset("assets/images/po.png"),width: 33,height: 33,padding: EdgeInsets.only(left: 10),),
+                       SizedBox(width: 10,),
                        Container(child: const Text("8502 Preston Rd. Inglewood,\nMaine 98380",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15),),)
                      ],
                    ),
@@ -62,8 +66,7 @@ class _Edit_locationState extends State<Edit_location> {
            width: 335,
            height: 141,
            decoration:const BoxDecoration(
-             borderRadius: BorderRadius.all(Radius.circular(22)),
-               color: Colors.white
+             borderRadius: BorderRadius.all(Radius.circular(22)),color:Colors.grey,
            ),
                 child: Column(
                   children: [
@@ -71,7 +74,7 @@ class _Edit_locationState extends State<Edit_location> {
                     const SizedBox(height: 12,),   
                     Container(
                       child: Row(children: [
-                        Container(child: IconButton(onPressed: (){}, icon: const Icon(Icons.account_circle_outlined,color: Colors.green,)),),
+                        Container(child: Image.asset("assets/images/po.png"),width: 33,height: 33,padding: EdgeInsets.only(left: 10),),
                         const SizedBox(width: 10,),
                         Container(child: const Text("4517 Washington Ave. Manchester,\nKentucky 39495",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w700),),)
                       ],),
@@ -86,6 +89,6 @@ class _Edit_locationState extends State<Edit_location> {
        ],
      ),
    ),
-   backgroundColor: Colors.grey[200], );
+   backgroundColor: isD?Colors.black:Colors.grey[200], );
   }
 }

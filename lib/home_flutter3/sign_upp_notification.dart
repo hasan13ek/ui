@@ -10,6 +10,7 @@ class Sign_up_notification extends StatefulWidget {
 
 class _Sign_up_notificationState extends State<Sign_up_notification> {
   @override
+  bool isDark = false;
   final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
     onPrimary: Colors.blue,
     elevation: 0,
@@ -21,6 +22,7 @@ class _Sign_up_notificationState extends State<Sign_up_notification> {
     ),
   );
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       body: Center(
         child: Container(
@@ -70,6 +72,6 @@ class _Sign_up_notificationState extends State<Sign_up_notification> {
           ),
         ),
       ),
-    );
+    backgroundColor: isDark?Colors.black:Colors.white,);
   }
 }

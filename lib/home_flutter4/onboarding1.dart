@@ -11,6 +11,7 @@ class Onboarding1 extends StatefulWidget {
 
 class _Onboarding1State extends State<Onboarding1> {
   @override
+  bool isDark = false;
   final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
     onPrimary: Colors.blue,
     elevation: 0,
@@ -22,12 +23,13 @@ class _Onboarding1State extends State<Onboarding1> {
     ),
   );
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       body: Container(
         child: Column(
           children: [
             SizedBox(height: 30.h,),
-            Container(padding: EdgeInsets.only(left: 30).r,child: Image.asset("assets/images/bu.png"),width: 350.w,height: 400.h,),
+            Container(padding: EdgeInsets.only(left: 30).r,child: isDark?Image.asset("assets/images/bu1.png"):Image.asset("assets/images/bu.png"),width: 350.w,height: 400.h,),
             Container(child: Text("Find your  Comfort\n        Food here",style: TextStyle(fontWeight: FontWeight.w800,fontSize: 22.sp),),),
             SizedBox(height: 20.h,),
             Container(child: Text('Here You Can find a chef or dish for every\n                 taste and color. Enjoy!',style: TextStyle(fontSize: 12),),),
@@ -46,6 +48,6 @@ class _Onboarding1State extends State<Onboarding1> {
           ],
         ),
       ),
-    );
+    backgroundColor: isDark?Colors.black:Colors.white,);
   }
 }

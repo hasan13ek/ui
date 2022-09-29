@@ -10,50 +10,52 @@ class Payment_method extends StatefulWidget {
 
 class _Payment_methodState extends State<Payment_method> {
   @override
-  final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-    onPrimary: Colors.blue,
-    elevation: 0,
-    primary: Colors.white,
-    minimumSize: Size(0, 0),
-    padding: EdgeInsets.only(top: 22,bottom: 28),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(28)),
-    ),
-  );
-  final ButtonStyle raisedButtonStyle1 = ElevatedButton.styleFrom(
-    onPrimary: Colors.blue,
-    elevation: 0,
-    primary: Colors.white,
-    minimumSize: Size(0, 0),
-    padding: EdgeInsets.only(top: 6,bottom: 7),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(28)),
-    ),
-  );
-  final ButtonStyle raisedButtonStyle2 = ElevatedButton.styleFrom(
-    onPrimary: Colors.blue,
-    elevation: 0,
-    primary: Colors.white,
-    minimumSize: Size(0, 0),
-    padding: EdgeInsets.only(top: 20,bottom: 21),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(28)),
-    ),
-  );
-  final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
-    onPrimary: Colors.green,
-    elevation: 0,
-    primary: Color(0xFF53E88B),
-    minimumSize: Size(0, 0),
-    padding: EdgeInsets.only(top: 18,bottom: 18),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(18)),
-    ),
-  );
+  bool isDark = false;
   Widget build(BuildContext context) {
+    isDark =  Theme.of(context).brightness == Brightness.dark;
+    final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
+      onPrimary: Colors.blue,
+      elevation: 0,
+      primary: isDark?Colors.grey[800]:Colors.white,
+      minimumSize: Size(0, 0),
+      padding: EdgeInsets.only(top: 22,bottom: 28),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+      ),
+    );
+    final ButtonStyle raisedButtonStyle1 = ElevatedButton.styleFrom(
+      onPrimary: Colors.blue,
+      elevation: 0,
+      primary: isDark?Colors.grey[800]:Colors.white,
+      minimumSize: Size(0, 0),
+      padding: EdgeInsets.only(top: 6,bottom: 7),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+      ),
+    );
+    final ButtonStyle raisedButtonStyle2 = ElevatedButton.styleFrom(
+      onPrimary: Colors.blue,
+      elevation: 0,
+      primary: isDark?Colors.grey[800]:Colors.white,
+      minimumSize: Size(0, 0),
+      padding: EdgeInsets.only(top: 20,bottom: 21),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+      ),
+    );
+    final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
+      onPrimary: Colors.green,
+      elevation: 0,
+      primary: Color(0xFF53E88B),
+      minimumSize: Size(0, 0),
+      padding: EdgeInsets.only(top: 18,bottom: 18),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(18)),
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: isDark?Colors.black:Colors.grey[100],
       elevation: 0,
       title: InkWell(
           onTap: (){},
@@ -83,7 +85,7 @@ class _Payment_methodState extends State<Payment_method> {
                   child: ElevatedButton(
                     style: raisedButtonStyle,
                     onPressed: () {},
-                    child: Image.asset("assets/images/paypal.png"),
+                    child: isDark?Image.asset("assets/images/paypal1.png"):Image.asset("assets/images/paypal.png"),
                   ),
                   width: 335,
                   height: 73,
@@ -97,7 +99,7 @@ class _Payment_methodState extends State<Payment_method> {
                   child: ElevatedButton(
                     style: raisedButtonStyle1,
                     onPressed: () {},
-                    child: Image.asset("assets/images/visa.png"),
+                    child: isDark?Image.asset("assets/images/visa1.png"):Image.asset("assets/images/visa.png"),
                   ),
                   width: 335,
                   height: 73,
@@ -111,7 +113,7 @@ class _Payment_methodState extends State<Payment_method> {
                   child: ElevatedButton(
                     style: raisedButtonStyle2,
                     onPressed: () {},
-                    child: Image.asset("assets/images/payoner.png"),
+                    child: isDark?Image.asset("assets/images/pay1.png"):Image.asset("assets/images/payoner.png"),
                   ),
                   width: 335,
                   height: 73,
@@ -142,7 +144,7 @@ class _Payment_methodState extends State<Payment_method> {
           ],
         ),
       ),
-    backgroundColor: Colors.grey[198],
+    backgroundColor: isDark?Colors.black:Colors.grey[198],
     );
   }
 }

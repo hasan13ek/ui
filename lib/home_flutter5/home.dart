@@ -9,9 +9,11 @@ class Home extends StatefulWidget {
   @override
   State<Home> createState() => _HomeState();
 }
-
+bool hp = false;
 class _HomeState extends State<Home> {
   @override
+  int glo = 0;
+  bool isDark = false;
   final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
   onPrimary: Colors.green,
   elevation: 0,
@@ -23,8 +25,11 @@ class _HomeState extends State<Home> {
   ),
   );
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
+    hp = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child:
         Container(
           // padding: EdgeInsets.only(left: 25,right: 25),
@@ -45,9 +50,20 @@ class _HomeState extends State<Home> {
                       Container(child: Text("Find Your\nFavorite Food",style: TextStyle(fontSize: 31.sp,fontWeight: FontWeight.w800),),),
                       SizedBox(width: 87,),
                       Container(width: 45,height: 45,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15).r),color: Colors.white),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15).r),color: isDark?Colors.grey[800]:Colors.white),
                         child: Image.asset("assets/images/noitfication.png",scale:1.5,),
-                      )
+                      ),
+                      // SizedBox(width: 22,),
+                      // Container(
+                      //   width: 40,
+                      //   height: 40,
+                      //   decoration: BoxDecoration(borderRadius: BorderRadius.circular(6),color: hp?Colors.grey[800]:Colors.white),
+                      //   child: TextButton(onPressed: (){
+                      //     glo++;
+                      //     if(glo%2==0){
+                      //     }
+                      //   },child: Text("D",style: TextStyle(color: Colors.red,fontSize: 24,fontWeight: FontWeight.w900),),),
+                      // )
                     ],
                   ),
                 ),
@@ -59,21 +75,21 @@ class _HomeState extends State<Home> {
                     Container(
                       width: 267.w,
                       height: 50.h,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15).r,color: Color(0xFFF9A84D).withOpacity(0.3)),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15).r,color: isDark?Colors.grey[800]:Color(0xFFF9A84D).withOpacity(0.3)),
                       child: Row(
                         children: [
-                          Container(child: IconButton(onPressed: null, icon:Icon(Icons.search,color: Color(0xFFF9A84D),),padding:EdgeInsets.only(right: 0),),),
+                          Container(child: IconButton(onPressed: null, icon:Icon(Icons.search,color: isDark?Colors.white:Color(0xFFF9A84D),),padding:EdgeInsets.only(right: 0),),),
                           Expanded(
                             child: Container(child: TextField(
-                              decoration: InputDecoration(hintText: "What do you want to order?",hintStyle: TextStyle(color:Color(0xFFDA6317)),border: InputBorder.none),
+                              decoration: InputDecoration(hintText: "What do you want to order?",hintStyle: TextStyle(color:isDark?Colors.grey:Color(0xFFDA6317)),border: InputBorder.none),
                             ),),
                           )
                         ],
                       ),
                     ),
                     SizedBox(width: 8,),
-                    Container(child: Image.asset("assets/images/settings.png",scale: 2,),width: 49.w,height: 50.h,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15).r,color: Color(0xFFF9A84D).withOpacity(0.3),))
+                    Container(child: Image.asset("assets/images/settings1.png",scale: 2,),width: 49.w,height: 50.h,
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15).r,color: isDark?Colors.grey[800]:Color(0xFFF9A84D).withOpacity(0.3),))
                   ],
                 ),
               ),
@@ -85,13 +101,14 @@ class _HomeState extends State<Home> {
                     borderRadius: BorderRadius.circular(16.r),
                     gradient: LinearGradient(colors: [Color(0xFF53E88B),Color(0xFF15BE77)]),
                     image: const DecorationImage(
-                        image: AssetImage("assets/images/Pattern.png")
+                        image:AssetImage("assets/images/has.png"),
+                      fit: BoxFit.cover
                     )
                 ),
                 child: Stack(
                   children: [
                       Image(image: AssetImage("assets/images/ice.png")),
-                    Positioned(child: Text("Special Deal For\nOctober",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 20.sp,color: Colors.white),),
+                    Positioned(child: Text("Special Deal For\nOctober",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 20.sp,color: isDark?Colors.black:Colors.white),),
                     right: 25,
                       top: 30,
                     ),
@@ -122,15 +139,14 @@ class _HomeState extends State<Home> {
               Container(
                 padding: EdgeInsets.only(right: 25,left: 20),
                 height: 184,
-                  child: Expanded(
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        shular(),
-                        shular1(),
-                        shular2()
-                      ],
-                    ),
+                  child: ListView(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      shular(),
+                      shular1(),
+                      shular2()
+                    ],
                   )
               ),
               SizedBox(height: 20.h,),
@@ -152,7 +168,7 @@ class _HomeState extends State<Home> {
         )
 
       ),
-    backgroundColor: Colors.grey[200],);
+    backgroundColor: isDark?Colors.black:Colors.grey[200],);
   }
 }
 Widget shular(){
@@ -160,11 +176,11 @@ Widget shular(){
     margin: EdgeInsets.only(right: 8),
     width: 147,
     height: 184,
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: Colors.white),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: hp?Colors.grey[800]:Colors.white),
     child: Container(
       child: Column(
         children: [
-          Container(margin: EdgeInsets.only(top: 26.r),width:96.w,height: 73.h,child: Image.asset("assets/images/viga.png"),),
+          Container(margin: EdgeInsets.only(top: 26.r),width:96.w,height: 73.h,child: hp?Image.asset("assets/images/viga1.png"):Image.asset("assets/images/viga.png"),),
           SizedBox(height: 17.h,),
           Container(child: Column(
             children: [
@@ -183,11 +199,11 @@ Widget shular1(){
     margin: EdgeInsets.only(right: 8),
     width: 147,
     height: 184,
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: Colors.white),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: hp?Colors.grey[800]:Colors.white),
     child: Container(
       child: Column(
         children: [
-          Container(margin: EdgeInsets.only(top: 8.r),width:98.w,height: 90.h,child: Image.asset("assets/images/healthy.png"),),
+          Container(margin: EdgeInsets.only(top: 8.r),width:98.w,height: 90.h,child: hp?Image.asset("assets/images/kim.png"):Image.asset("assets/images/healthy.png"),),
           SizedBox(height: 17.h,),
           Container(child: Column(
             children: [
@@ -206,11 +222,11 @@ Widget shular2(){
     margin: EdgeInsets.only(right: 8),
     width: 147,
     height: 184,
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: Colors.white),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: hp?Colors.grey[800]:Colors.white),
     child: Container(
       child: Column(
         children: [
-          Container(margin: EdgeInsets.only(top: 18.r),width:86.w,height: 88.h,child: Image.asset("assets/images/good.png"),),
+          Container(margin: EdgeInsets.only(top: 18.r),width:86.w,height: 88.h,child: hp?Image.asset("assets/images/good1.png"):Image.asset("assets/images/good.png"),),
           SizedBox(height: 17.h,),
           Container(child: Column(
             children: [
@@ -229,7 +245,7 @@ Widget yana(){
     padding: EdgeInsets.only(left: 24,right: 24),
     width: 323.w,
     height: 87.h,
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: Colors.white),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: hp?Colors.grey[800]:Colors.white),
     child: Row(
       children: [
         Container(child: Image.asset("assets/images/tort.png"),width: 64.w,height: 64.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp)),),
@@ -252,7 +268,7 @@ Widget yana1(){
     padding: EdgeInsets.only(left: 24,right: 24),
     width: 323.w,
     height: 87.h,
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: Colors.white),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: hp?Colors.grey[800]:Colors.white),
     child: Row(
       children: [
         Container(child: Image.asset("assets/images/boshqa.png"),width: 64.w,height: 64.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp)),),
@@ -275,7 +291,7 @@ Widget yana2(){
     padding: EdgeInsets.only(left: 24,right: 24),
     width: 323.w,
     height: 87.h,
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: Colors.white),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: hp?Colors.grey[800]:Colors.white),
     child: Row(
       children: [
         Container(child: Image.asset("assets/images/oshroq.png"),width: 64.w,height: 64.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp)),),

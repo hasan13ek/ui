@@ -11,16 +11,7 @@ class Sign_up extends StatefulWidget {
 
 class _Sign_upState extends State<Sign_up> {
   @override
-  final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
-    onPrimary: Colors.greenAccent,
-    elevation: 0,
-    primary: Color(0xFFF4F4F4),
-    minimumSize: Size(0, 0),
-    padding: EdgeInsets.only(top: 18,bottom: 18),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(15)),
-    ),
-  );
+  bool isDark =false;
   final ButtonStyle raisedButtonStyle2 = ElevatedButton.styleFrom(
     onPrimary: Colors.white,
     elevation: 0,
@@ -32,6 +23,17 @@ class _Sign_upState extends State<Sign_up> {
     ),
   );
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
+    final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
+      onPrimary: Colors.greenAccent,
+      elevation: 0,
+      primary: isDark?Colors.white10:Color(0xFFF4F4F4),
+      minimumSize: Size(0, 0),
+      padding: EdgeInsets.only(top: 18,bottom: 18),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+      ),
+    );
     return Scaffold(
       body: Container(
         child: Column(
@@ -51,7 +53,7 @@ class _Sign_upState extends State<Sign_up> {
               child: ElevatedButton(
                 style: raisedButtonStyle3,
                 onPressed: () {},
-                child: Container(child: Container(padding: EdgeInsets.only(right: 250),child: Text("Email",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Color(0xD5737373)),))),
+                child: Container(child: Container(padding: EdgeInsets.only(right: 250),child: Text("Email",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color:Color(0xD5737373)),))),
               ),
               width: 325.w,
               height: 57.h,
@@ -95,7 +97,7 @@ class _Sign_upState extends State<Sign_up> {
                           SizedBox(width: 13,),
                           Container(child: Text("Facebook",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14),),)
                         ],
-                      ),width: 152.w,height: 57.h,decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15)),color: Color(0xFFF4F4F4)),),
+                      ),width: 152.w,height: 57.h,decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15)),color: isDark?Colors.white10:Color(0xFFF4F4F4)),),
                       SizedBox(width: 21.w,),
                       Container(child: Row(
                         children: [
@@ -103,7 +105,7 @@ class _Sign_upState extends State<Sign_up> {
                           SizedBox(width: 13,),
                           Container(child: Text("Google",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14),),)
                         ],
-                      ),width: 152.w,height: 57.h,decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15)),color: Color(0xFFF4F4F4)),),
+                      ),width: 152.w,height: 57.h,decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15)),color: isDark?Colors.white10:Color(0xFFF4F4F4)),),
                     ],
                   ),
                 ],
@@ -126,6 +128,6 @@ class _Sign_upState extends State<Sign_up> {
           ],
         ),
       ),
-    );
+        backgroundColor: isDark?Colors.black:Colors.grey[198]);
   }
 }

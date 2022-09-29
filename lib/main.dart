@@ -56,6 +56,9 @@ class _MyAppState extends State<MyApp> {
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child){
         return MaterialApp(
+            themeMode: ThemeMode.dark,
+            darkTheme: ThemeData.dark(),
+            theme: ThemeData.light(),
           debugShowCheckedModeBanner: false,
           home: child);
       },

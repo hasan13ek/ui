@@ -11,50 +11,52 @@ class Sign_in extends StatefulWidget {
 
 class _Payment_methodState extends State<Sign_in> {
   @override
-  final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-    onPrimary: Colors.blue,
-    elevation: 0,
-    primary: Colors.white,
-    minimumSize: Size(0, 0),
-    padding: EdgeInsets.only(top: 22,bottom: 28).r,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(28).r),
-    ),
-  );
-  final ButtonStyle raisedButtonStyle1 = ElevatedButton.styleFrom(
-    onPrimary: Colors.blue,
-    elevation: 0,
-    primary: Colors.white,
-    minimumSize: Size(0, 0),
-    padding: EdgeInsets.only(top: 6,bottom: 7).r,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(28).r),
-    ),
-  );
-  final ButtonStyle raisedButtonStyle2 = ElevatedButton.styleFrom(
-    onPrimary: Colors.blue,
-    elevation: 0,
-    primary: Colors.white,
-    minimumSize: Size(0, 0),
-    padding: EdgeInsets.only(top: 20,bottom: 21).r,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(28).r),
-    ),
-  );
-  final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
-    onPrimary: Colors.green,
-    elevation: 0,
-    primary: Color(0xFF53E88B),
-    minimumSize: Size(0, 0),
-    padding: EdgeInsets.only(top: 18,bottom: 18),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(18)),
-    ),
-  );
+  bool isDark = false;
   Widget build(BuildContext context) {
+    isDark = Theme.of(context).brightness == Brightness.dark;
+    final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
+      onPrimary: Colors.blue,
+      elevation: 0,
+      primary: isDark?Colors.white10:Colors.white,
+      minimumSize: Size(0, 0),
+      padding: EdgeInsets.only(top: 22,bottom: 28).r,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(28).r),
+      ),
+    );
+    final ButtonStyle raisedButtonStyle1 = ElevatedButton.styleFrom(
+      onPrimary: Colors.blue,
+      elevation: 0,
+      primary: Colors.white,
+      minimumSize: Size(0, 0),
+      padding: EdgeInsets.only(top: 6,bottom: 7).r,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(28).r),
+      ),
+    );
+    final ButtonStyle raisedButtonStyle2 = ElevatedButton.styleFrom(
+      onPrimary: Colors.blue,
+      elevation: 0,
+      primary: Colors.white,
+      minimumSize: Size(0, 0),
+      padding: EdgeInsets.only(top: 20,bottom: 21).r,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(28).r),
+      ),
+    );
+    final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
+      onPrimary: Colors.green,
+      elevation: 0,
+      primary: Color(0xFF53E88B),
+      minimumSize: Size(0, 0),
+      padding: EdgeInsets.only(top: 18,bottom: 18),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(18)),
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: isDark?Colors.black:Colors.grey[100],
         elevation: 0,
         title: InkWell(
             onTap: (){},
@@ -63,13 +65,14 @@ class _Payment_methodState extends State<Sign_in> {
         ),
       ),
       body: Container(
+        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/"))),
         padding: EdgeInsets.all(20).r,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: EdgeInsets.only(left: 5),
-              child: Container(child: Text("Payment Method",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 20),),
+              child: Container(child: Text("Fill in your bio to get\nstarted",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 20),),
               ),
             ),
             SizedBox(height: 20.h),
@@ -119,7 +122,7 @@ class _Payment_methodState extends State<Sign_in> {
                 ),
               ],
             ),
-            SizedBox(height: 126.h,),
+            SizedBox(height: 116.5.h,),
             Column(
               children: [
                 Center(
@@ -143,7 +146,7 @@ class _Payment_methodState extends State<Sign_in> {
           ],
         ),
       ),
-      backgroundColor: Colors.grey[198],
+      backgroundColor: isDark?Colors.black:Colors.grey[198],
     );
   }
 }

@@ -9,14 +9,16 @@ class Edit_paymnets extends StatefulWidget {
 
 class _Edit_paymnetsState extends State<Edit_paymnets> {
   @override
+  bool isD=false;
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 4),()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>Edit_location())));
   }
   Widget build(BuildContext context) {
+    isD=Theme.of(context).brightness==Brightness.dark;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: isD?Colors.black:Colors.grey[200],
         elevation: 0,
         leading: InkWell(
           onTap: (){},
@@ -37,13 +39,13 @@ class _Edit_paymnetsState extends State<Edit_paymnets> {
             child: Container(
     child: Row(
     children: [
-    Container(padding: EdgeInsets.only(left: 20),child: Image.asset("assets/images/paypal.png",width: 86,height: 23,),),
+    Container(padding: EdgeInsets.only(left: 20),child: Image.asset("assets/images/paypal1.png",width: 86,height: 23,),),
     SizedBox(width: 65,height: 30,),
     Container(child: Text("2121 6352 8465 ****",style: TextStyle(fontWeight: FontWeight.w400 ),),),
     ],
     ),
     ),
-            decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: Colors.white,
+            decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: isD?Colors.grey[800]:Colors.white,
           ),
           ),
           SizedBox(height: 17,),
@@ -51,13 +53,13 @@ class _Edit_paymnetsState extends State<Edit_paymnets> {
             child: Container(
               child: Row(
                 children: [
-                  Container(padding: EdgeInsets.only(left: 20),child: Image.asset("assets/images/visa.png",width: 86,height: 60,),),
+                  Container(padding: EdgeInsets.only(left: 20),child: Image.asset("assets/images/visa1.png",width: 86,height: 60,),),
                   SizedBox(width: 65,height: 30,),
                   Container(child: Text("2121 6352 8465 ****",style: TextStyle(fontWeight: FontWeight.w400 ),),),
                 ],
               ),
             ),
-            decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: Color(0xFFF6F6F6),
+            decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: isD?Colors.grey[800]:Color(0xFFF6F6F6),
             ),
           ),
           SizedBox(height: 17,),
@@ -65,18 +67,18 @@ class _Edit_paymnetsState extends State<Edit_paymnets> {
             child: Container(
               child: Row(
                 children: [
-                  Container(padding: EdgeInsets.only(left: 20),child: Image.asset("assets/images/payoner.png",width: 86,height: 32,),),
+                  Container(padding: EdgeInsets.only(left: 20),child: Image.asset("assets/images/pay1.png",width: 86,height: 32,),),
                   SizedBox(width: 65,height: 30,),
                   Container(child: Text("2121 6352 8465 ****",style: TextStyle(fontWeight: FontWeight.w400 ),),),
                 ],
               ),
             ),
-            decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: Color(0xFFF6F6F6),
+            decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: isD?Colors.grey[800]:Color(0xFFF6F6F6),
             ),
           ),
         ],
       ),
     ),
-    backgroundColor: Colors.grey[200],);
+    backgroundColor: isD?Colors.black:Colors.grey[200],);
   }
 }

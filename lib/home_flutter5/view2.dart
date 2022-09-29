@@ -7,21 +7,23 @@ class View2 extends StatefulWidget {
   @override
   State<View2> createState() => _View2State();
 }
-
+bool hp =false;
 class _View2State extends State<View2> {
   @override
   Widget build(BuildContext context) {
+    hp = Theme.of(context).brightness ==Brightness.dark;
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(left: 24,right: 24),
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             children: [
               SizedBox(height: 50.h,),
               Container(width: double.infinity,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("assets/images/burger.png"),
+                      image: AssetImage("assets/images/burger.png"),fit: BoxFit.cover
                     )
                 ),
                 padding: EdgeInsets.only(left: 0).r,
@@ -32,7 +34,7 @@ class _View2State extends State<View2> {
                       Container(child: Text("Find Your\nFavorite Food",style: TextStyle(fontSize: 31.sp,fontWeight: FontWeight.w800),),),
                       SizedBox(width: 87,),
                       Container(width: 45,height: 45,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15).r),color: Colors.white),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15).r),color: hp?Colors.grey[800]:Colors.white),
                         child: Image.asset("assets/images/noitfication.png",scale:1.5,),
                       )
                     ],
@@ -46,21 +48,21 @@ class _View2State extends State<View2> {
                     Container(
                       width: 267.w,
                       height: 50.h,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15).r,color: Color(0xFFF9A84D).withOpacity(0.3)),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15).r,color: hp?Colors.grey[800]:Color(0xFFF9A84D).withOpacity(0.3)),
                       child: Row(
                         children: [
-                          Container(child: IconButton(onPressed: null, icon:Icon(Icons.search,color: Color(0xFFF9A84D),),padding:EdgeInsets.only(right: 0),),),
+                          Container(child: IconButton(onPressed: null, icon:Icon(Icons.search,color: hp?Colors.white:Color(0xFFF9A84D),),padding:EdgeInsets.only(right: 0),),),
                           Expanded(
                             child: Container(child: TextField(
-                              decoration: InputDecoration(hintText: "What do you want to order?",hintStyle: TextStyle(color:Color(0xFFDA6317)),border: InputBorder.none),
+                              decoration: InputDecoration(hintText: "What do you want to order?",hintStyle: TextStyle(color:hp?Colors.grey:Color(0xFFDA6317)),border: InputBorder.none),
                             ),),
                           )
                         ],
                       ),
                     ),
                     SizedBox(width: 8,),
-                    Container(child: Image.asset("assets/images/settings.png",scale: 2,),width: 49.w,height: 50.h,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15).r,color: Color(0xFFF9A84D).withOpacity(0.3),))
+                    Container(child: hp?Image.asset("assets/images/settings1.png",scale: 2,):Image.asset("assets/images/settings.png",scale: 2,),width: 49.w,height: 50.h,
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15).r,color: hp?Colors.grey[800]:Color(0xFFF9A84D).withOpacity(0.3),))
                   ],
                 ),
               ),
@@ -81,7 +83,7 @@ class _View2State extends State<View2> {
           ),
         ),
       ),
-    );
+    backgroundColor: hp?Colors.black:Colors.white,);
   }
 }
 
@@ -90,7 +92,7 @@ Widget yana(){
     padding: EdgeInsets.only(left: 24,right: 24),
     width: 323.w,
     height: 87.h,
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: Colors.white),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: hp?Colors.grey[800]:Colors.white),
     child: Row(
       children: [
         Container(child: Image.asset("assets/images/tort.png"),width: 64.w,height: 64.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp)),),
@@ -113,7 +115,7 @@ Widget yana1(){
     padding: EdgeInsets.only(left: 24,right: 24),
     width: 323.w,
     height: 87.h,
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: Colors.white),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: hp?Colors.grey[800]:Colors.white),
     child: Row(
       children: [
         Container(child: Image.asset("assets/images/boshqa.png"),width: 64.w,height: 64.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp)),),
@@ -136,7 +138,7 @@ Widget yana2(){
     padding: EdgeInsets.only(left: 24,right: 24),
     width: 323.w,
     height: 87.h,
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: Colors.white),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: hp?Colors.grey[800]:Colors.white),
     child: Row(
       children: [
         Container(child: Image.asset("assets/images/oshroq.png"),width: 64.w,height: 64.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp)),),
@@ -161,10 +163,10 @@ Widget yana3(){
     padding: EdgeInsets.only(left: 24,right: 24),
     width: 323.w,
     height: 87.h,
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: Colors.white),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: hp?Colors.grey[800]:Colors.white),
     child: Row(
       children: [
-        Container(child: Image.asset("assets/images/opa.png"),width: 64.w,height: 64.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp)),),
+        Container(child: hp?Image.asset("assets/images/opa1.png"):Image.asset("assets/images/opa.png"),width: 64.w,height: 64.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp)),),
         SizedBox(width: 21.w,),
         Container(child: Column(
           children: [
@@ -184,7 +186,7 @@ Widget yana4(){
     padding: EdgeInsets.only(left: 24,right: 24),
     width: 323.w,
     height: 87.h,
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: Colors.white),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: hp?Colors.grey[800]:Colors.white),
     child: Row(
       children: [
         Container(child: Image.asset("assets/images/ospaz.png"),width: 64.w,height: 64.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp)),),
@@ -207,7 +209,7 @@ Widget yana5(){
     padding: EdgeInsets.only(left: 24,right: 24),
     width: 323.w,
     height: 87.h,
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: Colors.white),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(22.r),color: hp?Colors.grey[800]:Colors.white),
     child: Row(
       children: [
         Container(child: Image.asset("assets/images/kob.png"),width: 64.w,height: 64.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp)),),

@@ -10,6 +10,7 @@ class Payments extends StatefulWidget {
 
 class _PaymentsState extends State<Payments> {
   @override
+  bool isD = false;
   final ButtonStyle raisedButtonStyle3 = ElevatedButton.styleFrom(
     onPrimary: Colors.greenAccent,
     elevation: 0,
@@ -21,9 +22,10 @@ class _PaymentsState extends State<Payments> {
     ),
   );
   Widget build(BuildContext context) {
+    isD = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.grey[200],
+          backgroundColor: isD?Colors.black:Colors.grey[200],
           elevation: 0,
           leading: InkWell(
             onTap: (){},
@@ -43,7 +45,7 @@ class _PaymentsState extends State<Payments> {
             Container(
               width: 335,
               height: 108,
-              decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: Colors.white),
+              decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: isD?Colors.grey[800]:Colors.white),
               child: Column(
                 children: [
                       Container(child: Row(
@@ -60,8 +62,8 @@ class _PaymentsState extends State<Payments> {
                   Container(
                     child: Row(
                       children: [
-                        Container(padding: EdgeInsets.only(left: 6),child: IconButton(onPressed: (){}, icon: Icon(Icons.account_circle,color: Colors.red,)),),
-                        SizedBox(width: 6,),
+                        Container(padding: EdgeInsets.only(left: 6),child: Container(width: 33,height: 33,child: Image.asset("assets/images/po.png")),),
+                        SizedBox(width: 12,),
                         Container(child: Text("4517 Washington Ave. Manchester,\nKentucky 39495",style: TextStyle(fontWeight: FontWeight.w500,fontSize:15 ),),),
                       ],
                     ),
@@ -73,7 +75,7 @@ class _PaymentsState extends State<Payments> {
             Container(
               width: 335,
               height: 108,
-              decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: Colors.white),
+              decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(22)),color: isD?Colors.grey[800]:Colors.white),
               child: Column(
                 children: [
                   Container(child: Row(
@@ -90,7 +92,7 @@ class _PaymentsState extends State<Payments> {
                   Container(
                     child: Row(
                       children: [
-                        Container(padding: EdgeInsets.only(left: 20),child: Image.asset("assets/images/paypal.png",width: 86,height: 23,),),
+                        Container(padding: EdgeInsets.only(left: 20),child: Image.asset("assets/images/paypal1.png",width: 86,height: 23,),),
                         SizedBox(width: 65,height: 30,),
                         Container(child: Text("2121 6352 8465 ****",style: TextStyle(fontWeight: FontWeight.w400 ),),),
                       ],
@@ -164,6 +166,6 @@ class _PaymentsState extends State<Payments> {
           ],
         ),
       ),
-    backgroundColor: Colors.grey[200],);
+    backgroundColor: isD?Colors.black:Colors.grey[200],);
   }
 }
