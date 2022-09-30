@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:first_lesson/darsda/%D1%8B%D1%80%D0%B3.dart';
+import 'package:first_lesson/darsda/gridview.dart';
 import 'package:first_lesson/darsda/my_cart.dart';
 import 'package:first_lesson/darsda/stack_va_boshqalar.dart';
 import 'package:first_lesson/home_flutter2/day_page2.dart';
@@ -34,6 +35,7 @@ import 'package:first_lesson/home_flutter4/sign_up_process.dart';
 import 'package:first_lesson/home_flutter5/home.dart';
 import 'package:first_lesson/home_flutter5/view1.dart';
 import 'package:first_lesson/home_flutter5/view2.dart';
+import 'package:first_lesson/home_flutter6/daryo_uz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() {
@@ -56,13 +58,14 @@ class _MyAppState extends State<MyApp> {
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child){
         return MaterialApp(
-            themeMode: ThemeMode.dark,
+
+            themeMode: ThemeMode.system,
             darkTheme: ThemeData.dark(),
             theme: ThemeData.light(),
           debugShowCheckedModeBanner: false,
           home: child);
       },
-      child:Home(),
+      child:Daryo_Uz(),
     );
   }
 }
