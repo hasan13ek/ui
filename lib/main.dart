@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:first_lesson/darsda/%D1%8B%D1%80%D0%B3.dart';
+import 'package:first_lesson/darsda/flu8.dart';
 import 'package:first_lesson/darsda/gridview.dart';
 import 'package:first_lesson/darsda/my_cart.dart';
 import 'package:first_lesson/darsda/stack_va_boshqalar.dart';
@@ -36,6 +37,8 @@ import 'package:first_lesson/home_flutter5/home.dart';
 import 'package:first_lesson/home_flutter5/view1.dart';
 import 'package:first_lesson/home_flutter5/view2.dart';
 import 'package:first_lesson/home_flutter6/daryo_uz.dart';
+import 'package:first_lesson/home_flutter7/weather1.dart';
+import 'package:first_lesson/home_flutter7/weather2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() {
@@ -65,7 +68,7 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           home: child);
       },
-      child:Daryo_Uz(),
+      child:Weather2(),
     );
   }
 }
