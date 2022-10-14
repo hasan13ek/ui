@@ -58,25 +58,25 @@ class _Daryo_UzState extends State<Daryo_Uz> {
               tileColor: Color(0xFFFFFDD0),
             ),
             ListTile(
-              title: Text("So'ngi yangiliklar",style: TextStyle(color: Colors.blue,fontSize: 16,fontWeight: FontWeight.w500),),
+              title:const Text("So'ngi yangiliklar",style: TextStyle(color: Colors.blue,fontSize: 16,fontWeight: FontWeight.w500),),
               tileColor: Colors.grey[200],
               onTap: (){},
             ),
-            ListTile(title: Text("Mahalliy"),onTap: (){},),
-            ListTile(title: Text("Dunyo"),onTap: (){},),
-            ListTile(title: Text("Texnologiyalar"),onTap: (){},),
+            ListTile(title:const Text("Mahalliy"),onTap: (){},),
+            ListTile(title:const Text("Dunyo"),onTap: (){},),
+            ListTile(title:const Text("Texnologiyalar"),onTap: (){},),
             Container(width: double.infinity,height: 1,color: Colors.grey,),
-            ListTile(title: Text("Tanlangan Xabarlar",style: TextStyle(color: Colors.green,fontSize: 16),),onTap: (){},),
+            ListTile(title:const Text("Tanlangan Xabarlar",style: TextStyle(color: Colors.green,fontSize: 16),),onTap: (){},),
             Container(width: double.infinity,height: 1,color: Colors.grey,),
-            ListTile(title: Text("Madaniyat"),onTap: (){},),
-            ListTile(title: Text("Avto"),onTap: (){},),
-            ListTile(title: Text("Sport"),onTap: (){},),
-            ListTile(title: Text("Foto"),onTap: (){},),
+            ListTile(title:const Text("Madaniyat"),onTap: (){},),
+            ListTile(title:const Text("Avto"),onTap: (){},),
+            ListTile(title:const Text("Sport"),onTap: (){},),
+            ListTile(title:const Text("Foto"),onTap: (){},),
           ],
         ),
       ),
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Container(
           child: Column(
             children: [
@@ -90,10 +90,10 @@ class _Daryo_UzState extends State<Daryo_Uz> {
                        shrinkWrap: true,
                        scrollDirection: Axis.horizontal,
                        children: [
-                         Container(padding: EdgeInsets.only(left: 10,top: 0),child: TextButton(onPressed: (){var snack = SnackBar(content: Text("Siz oflayinsiz iltimos internetni yoqing"));ScaffoldMessenger.of(context).showSnackBar(snack);},child: Text("So'ngi Yangiliklar",style: TextStyle(color: Colors.blue,fontSize: 14,fontWeight: FontWeight.w700),)),),
-                         Container(padding: EdgeInsets.only(left: 10,top: 10),child: Text("Asosiy Yangiliklar",style: TextStyle(color: Colors.blue,fontSize: 14,fontWeight: FontWeight.w700),),),
-                         Container(padding: EdgeInsets.only(left: 10,top: 10),child: Text("Eng ko'p Yangiliklar",style: TextStyle(color: Colors.blue,fontSize: 14,fontWeight: FontWeight.w700),),),
-                         Container(padding: EdgeInsets.only(left: 10,top: 10,right: 10),child: Text("Sport Yangiliklar",style: TextStyle(color: Colors.blue,fontSize: 14,fontWeight: FontWeight.w700),),),
+                         Container(padding: const EdgeInsets.only(left: 10,top: 0),child: TextButton(onPressed: (){var snack = SnackBar(content: Text("Siz oflayinsiz iltimos internetni yoqing"));ScaffoldMessenger.of(context).showSnackBar(snack);},child: Text("So'ngi Yangiliklar",style: TextStyle(color: Colors.blue,fontSize: 14,fontWeight: FontWeight.w700),)),),
+                         Container(padding: const EdgeInsets.only(left: 10,top: 10),child: Text("Asosiy Yangiliklar",style: TextStyle(color: Colors.blue,fontSize: 14,fontWeight: FontWeight.w700),),),
+                         Container(padding: const EdgeInsets.only(left: 10,top: 10),child: Text("Eng ko'p Yangiliklar",style: TextStyle(color: Colors.blue,fontSize: 14,fontWeight: FontWeight.w700),),),
+                         Container(padding: const EdgeInsets.only(left: 10,top: 10,right: 10),child: Text("Sport Yangiliklar",style: TextStyle(color: Colors.blue,fontSize: 14,fontWeight: FontWeight.w700),),),
                        ],
                      ),
                    )
@@ -103,40 +103,40 @@ class _Daryo_UzState extends State<Daryo_Uz> {
             Container(
             child: Column(
               children: [
-                Container(child: Row(children: [Padding(padding: EdgeInsets.only(left: 14)),Container(child: Text("Malumot"),),SizedBox(width: 90.w,),Container(child: Text("17:30 | 8 Dekabr 2021 | "),),SizedBox(width: 6.w,),Container(child: Image.asset("assets/images/koz.png",scale: 4,),),SizedBox(width: 6.w,),Container(child: Text("522",style: TextStyle(color: Colors.blue),),)],),),
+                Container(child: Row(children: [const  Padding(padding: EdgeInsets.only(left: 14)),Container(child: Text("Malumot"),),SizedBox(width: 90.w,),Container(child: Text("17:30 | 8 Dekabr 2021 | "),),SizedBox(width: 6.w,),Container(child: Image.asset("assets/images/koz.png",scale: 4,),),SizedBox(width: 6.w,),Container(child: Text("522",style: TextStyle(color: Colors.blue),),)],),),
                 SizedBox(height: 14.h,),
-                Container(padding: EdgeInsets.only(left: 14),child: Row(children: [Container(child: Image.asset("assets/images/oshroq.png",scale: 1.3,),),SizedBox(width: 20.w,),Container(child: Text("Lorem ipsum dolor sit amet\nconsectetur adipiscing\nelit. Suspendisse id ullamcorper\nassa, id pellentesque\nAliquam sem arcu, egestas\nsit amet nisi",style: TextStyle(fontWeight: FontWeight.w700),),)],),),
+                Container(padding: const EdgeInsets.only(left: 14),child: Row(children: [Container(child: Image.asset("assets/images/oshroq.png",scale: 1.3,),),SizedBox(width: 20.w,),Container(child: Text("Lorem ipsum dolor sit amet\nconsectetur adipiscing\nelit. Suspendisse id ullamcorper\nassa, id pellentesque\nAliquam sem arcu, egestas\nsit amet nisi",style: TextStyle(fontWeight: FontWeight.w700),),)],),),
                 SizedBox(height: 10.h,),
                 Container(width: 325,height: 2,color: Colors.grey,),
                 SizedBox(height: 10.h,),
 
 
-                Container(child: Row(children: [Padding(padding: EdgeInsets.only(left: 14)),Container(child: Text("Malumot"),),SizedBox(width: 90.w,),Container(child: Text("17:30 | 8 Dekabr 2021 | "),),SizedBox(width: 6.w,),Container(child: Image.asset("assets/images/koz.png",scale: 4,),),SizedBox(width: 6.w,),Container(child: Text("522",style: TextStyle(color: Colors.blue),),)],),),
+                Container(child: Row(children: [const Padding(padding: EdgeInsets.only(left: 14)),Container(child: Text("Malumot"),),SizedBox(width: 90.w,),Container(child: Text("17:30 | 8 Dekabr 2021 | "),),SizedBox(width: 6.w,),Container(child: Image.asset("assets/images/koz.png",scale: 4,),),SizedBox(width: 6.w,),Container(child: Text("522",style: TextStyle(color: Colors.blue),),)],),),
                 SizedBox(height: 14.h,),
-                Container(padding: EdgeInsets.only(left: 14),child: Row(children: [Container(child: Image.asset("assets/images/tort.png",scale: 1.3,),),SizedBox(width: 20.w,),Container(child: Text("Lorem ipsum dolor sit amet\nconsectetur adipiscing\nelit. Suspendisse id ullamcorper\nassa, id pellentesque\nAliquam sem arcu, egestas\nsit amet nisi",style: TextStyle(fontWeight: FontWeight.w700),),)],),),
+                Container(padding:const  EdgeInsets.only(left: 14),child: Row(children: [Container(child: Image.asset("assets/images/tort.png",scale: 1.3,),),SizedBox(width: 20.w,),Container(child: Text("Lorem ipsum dolor sit amet\nconsectetur adipiscing\nelit. Suspendisse id ullamcorper\nassa, id pellentesque\nAliquam sem arcu, egestas\nsit amet nisi",style: TextStyle(fontWeight: FontWeight.w700),),)],),),
                 SizedBox(height: 10.h,),
                 Container(width: 325,height: 2,color: Colors.grey,),
                 SizedBox(height: 10.h,),
 
 
-                Container(child: Row(children: [Padding(padding: EdgeInsets.only(left: 14)),Container(child: Text("Malumot"),),SizedBox(width: 90.w,),Container(child: Text("17:30 | 8 Dekabr 2021 | "),),SizedBox(width: 6.w,),Container(child: Image.asset("assets/images/koz.png",scale: 4,),),SizedBox(width: 6.w,),Container(child: Text("522",style: TextStyle(color: Colors.blue),),)],),),
+                Container(child: Row(children: [const Padding(padding: EdgeInsets.only(left: 14)),Container(child: Text("Malumot"),),SizedBox(width: 90.w,),Container(child: Text("17:30 | 8 Dekabr 2021 | "),),SizedBox(width: 6.w,),Container(child: Image.asset("assets/images/koz.png",scale: 4,),),SizedBox(width: 6.w,),Container(child: Text("522",style: TextStyle(color: Colors.blue),),)],),),
                 SizedBox(height: 14.h,),
-                Container(padding: EdgeInsets.only(left: 14),child: Row(children: [Container(child:Image.network("https://picsum.photos/250?image=9",scale: 1.3,),width: 100.w,height: 94.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp))),SizedBox(width: 20.w,),Container(child: Text("Lorem ipsum dolor sit amet\nconsectetur adipiscing\nelit. Suspendisse id ullamcorper\nassa, id pellentesque\nAliquam sem arcu, egestas\nsit amet nisi",style: TextStyle(fontWeight: FontWeight.w700),),)],),),
+                Container(padding:const  EdgeInsets.only(left: 14),child: Row(children: [Container(child:Image.network("https://picsum.photos/250?image=9",scale: 1.3,),width: 100.w,height: 94.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp))),SizedBox(width: 20.w,),Container(child: Text("Lorem ipsum dolor sit amet\nconsectetur adipiscing\nelit. Suspendisse id ullamcorper\nassa, id pellentesque\nAliquam sem arcu, egestas\nsit amet nisi",style: TextStyle(fontWeight: FontWeight.w700),),)],),),
                 SizedBox(height: 10.h,),
                 Container(width: 325,height: 2,color: Colors.grey,),
                 SizedBox(height: 10.h,),
 
 
-                Container(child: Row(children: [Padding(padding: EdgeInsets.only(left: 14)),Container(child: Text("Malumot"),),SizedBox(width: 90.w,),Container(child: Text("17:30 | 8 Dekabr 2021 | "),),SizedBox(width: 6.w,),Container(child: Image.asset("assets/images/koz.png",scale: 4,),),SizedBox(width: 6.w,),Container(child: Text("522",style: TextStyle(color: Colors.blue),),)],),),
+                Container(child: Row(children: [const Padding(padding: EdgeInsets.only(left: 14)),Container(child: Text("Malumot"),),SizedBox(width: 90.w,),Container(child: Text("17:30 | 8 Dekabr 2021 | "),),SizedBox(width: 6.w,),Container(child: Image.asset("assets/images/koz.png",scale: 4,),),SizedBox(width: 6.w,),Container(child: Text("522",style: TextStyle(color: Colors.blue),),)],),),
                 SizedBox(height: 14.h,),
-                Container(padding: EdgeInsets.only(left: 14),child: Row(children: [Container(child:Image.network("https://picsum.photos/250?image=7",scale: 1.3,),width: 100.w,height: 94.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp))),SizedBox(width: 20.w,),Container(child: Text("Lorem ipsum dolor sit amet\nconsectetur adipiscing\nelit. Suspendisse id ullamcorper\nassa, id pellentesque\nAliquam sem arcu, egestas\nsit amet nisi",style: TextStyle(fontWeight: FontWeight.w700),),)],),),
+                Container(padding:const  EdgeInsets.only(left: 14),child: Row(children: [Container(child:Image.network("https://picsum.photos/250?image=7",scale: 1.3,),width: 100.w,height: 94.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp))),SizedBox(width: 20.w,),Container(child: Text("Lorem ipsum dolor sit amet\nconsectetur adipiscing\nelit. Suspendisse id ullamcorper\nassa, id pellentesque\nAliquam sem arcu, egestas\nsit amet nisi",style: TextStyle(fontWeight: FontWeight.w700),),)],),),
                 SizedBox(height: 10.h,),
                 Container(width: 325,height: 2,color: Colors.grey,),
                 SizedBox(height: 10.h,),
 
-                Container(child: Row(children: [Padding(padding: EdgeInsets.only(left: 14)),Container(child: Text("Malumot"),),SizedBox(width: 90.w,),Container(child: Text("17:30 | 8 Dekabr 2021 | "),),SizedBox(width: 6.w,),Container(child: Image.asset("assets/images/koz.png",scale: 4,),),SizedBox(width: 6.w,),Container(child: Text("522",style: TextStyle(color: Colors.blue),),)],),),
+                Container(child: Row(children: [const Padding(padding: EdgeInsets.only(left: 14)),Container(child: Text("Malumot"),),SizedBox(width: 90.w,),Container(child: Text("17:30 | 8 Dekabr 2021 | "),),SizedBox(width: 6.w,),Container(child: Image.asset("assets/images/koz.png",scale: 4,),),SizedBox(width: 6.w,),Container(child: Text("522",style: TextStyle(color: Colors.blue),),)],),),
                 SizedBox(height: 14.h,),
-                Container(padding: EdgeInsets.only(left: 14),child: Row(children: [Container(child:Image.network("https://picsum.photos/250?image=77",scale: 1.3,),width: 100.w,height: 94.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp))),SizedBox(width: 20.w,),Container(child: Text("Lorem ipsum dolor sit amet\nconsectetur adipiscing\nelit. Suspendisse id ullamcorper\nassa, id pellentesque\nAliquam sem arcu, egestas\nsit amet nisi",style: TextStyle(fontWeight: FontWeight.w700),),)],),),
+                Container(padding:const  EdgeInsets.only(left: 14),child: Row(children: [Container(child:Image.network("https://picsum.photos/250?image=77",scale: 1.3,),width: 100.w,height: 94.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.sp))),SizedBox(width: 20.w,),Container(child: Text("Lorem ipsum dolor sit amet\nconsectetur adipiscing\nelit. Suspendisse id ullamcorper\nassa, id pellentesque\nAliquam sem arcu, egestas\nsit amet nisi",style: TextStyle(fontWeight: FontWeight.w700),),)],),),
                 SizedBox(height: 10.h,),
                 Container(width: 325,height: 2,color: Colors.grey,),
 

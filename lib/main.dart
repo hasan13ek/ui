@@ -1,10 +1,17 @@
 import 'dart:async';
 
+import 'package:first_lesson/Quiz_app/quiz_app_home_page.dart';
+import 'package:first_lesson/Quiz_app/quiz_app_page_2.dart';
+import 'package:first_lesson/Quiz_app/quesWidget.dart';
 import 'package:first_lesson/darsda/%D1%8B%D1%80%D0%B3.dart';
 import 'package:first_lesson/darsda/flu8.dart';
 import 'package:first_lesson/darsda/gridview.dart';
 import 'package:first_lesson/darsda/my_cart.dart';
+import 'package:first_lesson/darsda/navigator_bar.dart';
+import 'package:first_lesson/darsda/saudAka.dart';
 import 'package:first_lesson/darsda/stack_va_boshqalar.dart';
+import 'package:first_lesson/darsda/tabbar.dart';
+import 'package:first_lesson/home_flutter10_amalyot_cofe/coffe.dart';
 import 'package:first_lesson/home_flutter2/day_page2.dart';
 import 'package:first_lesson/home_flutter2/day_page3.dart';
 import 'package:first_lesson/home_flutter2/day_page4.dart';
@@ -39,8 +46,12 @@ import 'package:first_lesson/home_flutter5/view2.dart';
 import 'package:first_lesson/home_flutter6/daryo_uz.dart';
 import 'package:first_lesson/home_flutter7/weather1.dart';
 import 'package:first_lesson/home_flutter7/weather2.dart';
+import 'package:first_lesson/home_flutter8/instagram.dart';
+import 'package:first_lesson/oddiy/oddiy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'Http/home_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -68,7 +79,7 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           home: child);
       },
-      child:Weather2(),
+      child:Homestanskiy(),
     );
   }
 }
